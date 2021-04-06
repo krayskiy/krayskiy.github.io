@@ -9,4 +9,16 @@ angular.module('personalPage', [
   'contactInfo',
   'resume',
   'about'
-]);
+])
+.directive('highlight', function () {      
+ 
+  return {
+  restrict : 'C',
+      link: function(scope, element) {
+          element.bind("click" , function(e){
+               element.parent().find("a").removeClass("active");
+               element.addClass("active");
+          });     
+      }
+  }
+});
